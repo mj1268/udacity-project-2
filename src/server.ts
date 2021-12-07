@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import {filterImageFromURL, deleteLocalFiles, isValidUrl} from './util/util';
 
 (async () => {
 
@@ -30,6 +30,32 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   /**************************************************************************** */
 
   //! END @TODO1
+  app.get( "/filteredimage", async (req, res) => {
+    try {
+      // Get submitted image url
+      const img_url: string = req.query.image_url
+
+      // Check if this is a valid url
+      const isValid = isValidUrl(img_url)
+      if (!isValid) {
+        res.statusMessage = "Provided url is not a valid image"
+        res.status(406).send()
+      }
+  
+      // Filter the image and save as a temporary file
+      const filteredImagePath = await filterImageFromURL(img_url)
+  
+      // Send new file
+      res.sendFile(filteredImagePath, (err) => {
+        // Delete temporary files
+        deleteLocalFiles([filteredImagePath])
+      })
+  
+    } catch {
+      res.statusMessage = "Unknown server error occurred while processing image"
+      res.status(500).send()
+    }
+  })
   
   // Root Endpoint
   // Displays a simple message to the user
