@@ -39,7 +39,7 @@ import {filterImageFromURL, deleteLocalFiles, isValidUrl} from './util/util';
       const isValid = isValidUrl(img_url)
       if (!isValid) {
         res.statusMessage = "Provided url is not a valid image"
-        res.status(406).send()
+        res.status(422).send()
       }
   
       // Filter the image and save as a temporary file
