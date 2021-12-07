@@ -37,3 +37,16 @@ export async function deleteLocalFiles(files: Array<string>) {
     fs.unlinkSync(file);
   }
 }
+
+export function isValidUrl(url: string) {
+  // Note: May not necessarily include protocol (e.g., http:// or https://)
+  if (
+    url.includes('.') &&
+    url.includes('/') &&
+    (url.substring(url.length - 4).toLowerCase() == ".jpg")
+  ) {
+    return true
+  } else {
+    return false
+  }
+}
