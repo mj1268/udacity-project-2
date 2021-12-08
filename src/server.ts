@@ -51,7 +51,8 @@ import {filterImageFromURL, deleteLocalFiles, isValidUrl} from './util/util';
         deleteLocalFiles([filteredImagePath])
       })
   
-    } catch {
+    } catch (e) {
+      console.log(e)
       res.statusMessage = "Unknown server error occurred while processing image"
       res.status(500).send()
     }
