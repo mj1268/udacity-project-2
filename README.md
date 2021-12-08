@@ -1,3 +1,11 @@
+# Warning from Student
+
+Note that the Jimp library in the stub has issues processing certain image files, including the sample link in the rubric.
+
+[Per this mentor thread](https://knowledge.udacity.com/questions/742363) it seems like this is not relevant to the project evaluation/intent.
+
+Other images, such as [this one](https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg) work just fine.
+
 # Udagram Image Filtering Microservice
 
 Udagram is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
