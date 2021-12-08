@@ -1,6 +1,9 @@
-# Warning from Student
+# Submission Notes
 
-Note that the Jimp library in the stub has issues processing certain image files, including the sample link in the rubric.
+Root Endpoint: [http://udacity-project-2-mj1268-dev.us-east-1.elasticbeanstalk.com/](http://udacity-project-2-mj1268-dev.us-east-1.elasticbeanstalk.com/)
+Sample Image Endpoint: [http://udacity-project-2-mj1268-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg](http://udacity-project-2-mj1268-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg)
+
+**NOTE**: The Jimp library in the stub has issues processing certain image files, including the sample link in the rubric.
 
 [Per this mentor thread](https://knowledge.udacity.com/questions/742363) it seems like this is not relevant to the project evaluation/intent.
 
